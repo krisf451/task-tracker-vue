@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-2xl my-8 mx-auto overflow-auto min-h-[300px] border border-blue-400 p-6 rounded-md;
+  }
+  .header {
+    @apply flex justify-between items-center mb-5 text-3xl;
+  }
+  .btn {
+    @apply inline-block border-none py-2 px-5 rounded-md cursor-pointer appearance-none text-lg focus:outline-none active:scale-[0.98];
+  }
+}
+
+/* 
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-block {
+  display: block;
+  width: 100%;
+} */
