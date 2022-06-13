@@ -1,22 +1,27 @@
+<template>
+  <button class="btn" :style="{ background: color }" @click="handleClick()">
+    {{ text }}
+  </button>
+</template>
 <script>
 export default {
   name: "Button",
+  data() {
+    return {
+      name: "Kristian",
+    };
+  },
   props: {
     color: String,
+    text: {
+      type: String,
+      default: "Click Me",
+    },
   },
-  render() {
-    return (
-      <button
-        type="button"
-        class={`btn bg-${
-          this.color === "black" || this.color === "white"
-            ? this.color
-            : this.color + "-500"
-        } ${this.color === "black" ? "text-white" : ""}`}
-      >
-        Add Task
-      </button>
-    );
+  methods: {
+    handleClick: function () {
+      alert(`Hello ${this.name}`);
+    },
   },
 };
 </script>

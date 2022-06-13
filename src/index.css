@@ -24,7 +24,7 @@ body {
     @apply flex justify-between items-center mb-5 text-3xl;
   }
   .btn {
-    @apply inline-block border-none py-2 px-5 rounded-md cursor-pointer appearance-none text-lg focus:outline-none active:scale-[0.98];
+    @apply inline-block text-white bg-black border-none py-2 px-5 rounded-md cursor-pointer appearance-none text-lg focus:outline-none active:scale-[0.98];
   }
 }
 
