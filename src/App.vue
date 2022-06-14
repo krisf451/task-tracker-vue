@@ -2,7 +2,12 @@
   <div class="container">
     <Header title="Task Tracker" />
     <CounterSetup />
-    <Tasks :tasks="tasks" />
+    <Tasks
+      @toggle-reminder="toggleReminder"
+      @delete-task="deleteTask"
+      :tasks="tasks"
+    />
+    <AddTask @handle-submit="handleSubmit" />
   </div>
 </template>
 
@@ -10,6 +15,7 @@
 import Header from "./components/Header.vue";
 import CounterSetup from "./components/CounterSetup.vue";
 import Tasks from "./components/Tasks.vue";
+import AddTask from "./components/AddTask.vue";
 
 export default {
   name: "App",
@@ -17,11 +23,27 @@ export default {
     Header,
     CounterSetup,
     Tasks,
+    AddTask,
   },
   data() {
     return {
       tasks: [],
     };
+  },
+  methods: {
+    deleteTask(id) {
+      console.log("task", id);
+      this.tasks = this.tasks.filter((task) => task.id !== id);
+    },
+    toggleReminder(id) {
+      this.tasks = this.tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      );
+    },
+    handleSubmit(task) {
+      console.log(task, "TESTEST");
+      this.tasks.push(task);
+    },
   },
   created() {
     this.tasks = [
