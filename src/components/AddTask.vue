@@ -4,8 +4,8 @@
       @submit="handleSubmit"
       class="flex flex-col justify-center items-start"
     >
-      <div class="my-4 w-full flex items-center">
-        <label for="taskName" class="mr-2">Task:</label>
+      <div class="my-4 w-full">
+        <label for="taskName" class="mr-2 block">Task:</label>
         <input
           type="text"
           class="border pl-2 focus:outline-none h-8 rounded-md w-full"
@@ -13,8 +13,8 @@
           v-model="taskName"
         />
       </div>
-      <div class="mb-4 w-full flex items-center">
-        <label for="day" class="mr-2">Time&Day:</label>
+      <div class="mb-4 w-full">
+        <label for="day" class="mr-2 block">Time & Day:</label>
         <input
           type="text"
           class="border pl-2 focus:outline-none h-8 rounded-md w-full"
@@ -27,13 +27,13 @@
         <input type="checkbox" id="reminder" v-model="reminder" />
       </div>
 
-      <button class="btn" type="submit">Submit</button>
+      <button class="btn mb-4" type="submit">Submit</button>
     </form>
   </div>
 </template>
 
 <script setup>
-import { ref, onUpdated, defineEmits } from "vue";
+import { ref, defineEmits } from "vue";
 
 const emit = defineEmits(["handle-submit"]);
 
@@ -61,10 +61,6 @@ const handleSubmit = (e) => {
 
   emit("handle-submit", newTask);
 };
-
-onUpdated(() => {
-  console.log(reminder.value, day.value, taskName.value);
-});
 </script>
 
 <style></style>

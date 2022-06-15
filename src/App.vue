@@ -2,12 +2,12 @@
   <div class="container">
     <Header title="Task Tracker" />
     <CounterSetup />
+    <AddTask @handle-submit="handleSubmit" />
     <Tasks
       @toggle-reminder="toggleReminder"
       @delete-task="deleteTask"
       :tasks="tasks"
     />
-    <AddTask @handle-submit="handleSubmit" />
   </div>
 </template>
 
@@ -41,8 +41,7 @@ export default {
       );
     },
     handleSubmit(task) {
-      console.log(task, "TESTEST");
-      this.tasks.push(task);
+      this.tasks = [...this.tasks, task];
     },
   },
   created() {
