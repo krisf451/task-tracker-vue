@@ -2,7 +2,7 @@
   <button
     class="btn"
     :class="`${color === 'black' ? 'text-white' : ''}`"
-    :style="{ background: color }"
+    :style="{ background: showAddTask ? color : 'red' }"
     @click="handleClick"
     type="button"
   >
@@ -16,18 +16,16 @@
 <script setup>
 import { ref, defineProps } from 'vue';
 
-const emit = defineEmits(['toggle-add-task']);
-
-const name = ref('Kristian');
+const emit = defineEmits(['button-click']);
 // const bools = ref(true);
 
 const handleClick = () => {
-  emit('toggle-add-task');
-  console.log('hi');
+  emit('button-click');
 };
 
 const props = defineProps({
   color: { type: String },
   text: { type: String, default: 'Click Me' },
+  showAddTask: { type: Boolean },
 });
 </script>

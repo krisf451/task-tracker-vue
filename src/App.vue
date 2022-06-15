@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header title="Task Tracker" @toggle-add-task="toggleAddTask" />
+    <Header title="Task Tracker" @button-click="toggleAddTask" :showAddTask="showAddTask" />
     <CounterSetup />
 
     <div v-if="showAddTask">
