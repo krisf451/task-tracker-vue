@@ -32,7 +32,7 @@
 <script setup>
 import { ref, defineEmits } from 'vue';
 
-const emit = defineEmits(['handle-submit']);
+const emit = defineEmits(['add-task']);
 
 const reminder = ref(false);
 const day = ref('');
@@ -56,7 +56,7 @@ const handleSubmit = (e) => {
   taskName.value = '';
   reminder.value = false;
 
-  emit('handle-submit', newTask);
+  emit('add-task', newTask);
 };
 </script>
 

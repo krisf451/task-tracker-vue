@@ -2,7 +2,7 @@
   <button
     class="btn"
     :class="`${color === 'black' ? 'text-white' : ''}`"
-    :style="{ background: showAddTask ? color : 'red' }"
+    :style="{ background: !showAddTask ? color : 'red' }"
     @click="handleClick"
     type="button"
   >

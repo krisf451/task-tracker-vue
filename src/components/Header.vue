@@ -3,7 +3,7 @@
     <h1>{{ title }}</h1>
     <Button
       @button-click="$emit('button-click')"
-      color="blue"
+      color="forestgreen"
       :text="showAddTask ? 'Close' : 'Add Task'"
       :showAddTask="showAddTask"
     />
