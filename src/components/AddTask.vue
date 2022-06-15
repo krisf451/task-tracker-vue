@@ -1,9 +1,6 @@
 <template>
   <div>
-    <form
-      @submit="handleSubmit"
-      class="flex flex-col justify-center items-start"
-    >
+    <form @submit="handleSubmit" class="flex flex-col justify-center items-start">
       <div class="my-4 w-full">
         <label for="taskName" class="mr-2 block">Task:</label>
         <input
@@ -27,25 +24,25 @@
         <input type="checkbox" id="reminder" v-model="reminder" />
       </div>
 
-      <button class="btn mb-4" type="submit">Submit</button>
+      <button class="btn mb-4 bg-black text-white" type="submit">Submit</button>
     </form>
   </div>
 </template>
 
 <script setup>
-import { ref, defineEmits } from "vue";
+import { ref, defineEmits } from 'vue';
 
-const emit = defineEmits(["handle-submit"]);
+const emit = defineEmits(['handle-submit']);
 
 const reminder = ref(false);
-const day = ref("");
-const taskName = ref("");
+const day = ref('');
+const taskName = ref('');
 
 const handleSubmit = (e) => {
   e.preventDefault();
 
   if (!taskName.value) {
-    alert("Please add a task");
+    alert('Please add a task');
     return;
   }
   const newTask = {
@@ -55,11 +52,11 @@ const handleSubmit = (e) => {
     reminder: reminder.value,
   };
 
-  day.value = "";
-  taskName.value = "";
+  day.value = '';
+  taskName.value = '';
   reminder.value = false;
 
-  emit("handle-submit", newTask);
+  emit('handle-submit', newTask);
 };
 </script>
 
