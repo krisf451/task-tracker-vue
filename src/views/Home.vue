@@ -6,11 +6,11 @@
 </template>
 
 <script setup>
-import { onMounted, ref, defineProps } from 'vue';
+import { onMounted, ref } from 'vue';
 import Tasks from '../components/Tasks.vue';
 import AddTask from '../components/AddTask.vue';
 
-const props = defineProps({
+defineProps({
   showAddTask: { type: Boolean },
 });
 const tasks = ref(null);

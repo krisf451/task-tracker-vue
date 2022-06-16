@@ -4,25 +4,19 @@
       "id": 71000,
       "text": "Eat 3 meals a day",
       "day": "Everyday",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 35378,
       "text": "Workout 3 times a week",
       "day": "Monday/Wednesday/Friday at 1:00PM PST",
-      "reminder": true
+      "reminder": false
     },
     {
-      "id": 31682,
-      "text": "Hang out with the familiy",
-      "day": "June 17 at 2:30 PM",
-      "reminder": true
-    },
-    {
-      "id": 23546,
-      "text": "Start my New Job at Phoenix Capital",
-      "day": "June 21, Tuesday 8 AM",
-      "reminder": true
+      "id": 91891,
+      "text": "test",
+      "day": "test",
+      "reminder": false
     }
   ]
 }

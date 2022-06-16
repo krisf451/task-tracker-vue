@@ -1,26 +1,19 @@
 <template>
   <header class="header">
-    <h1>{{ title }}</h1>
+    <h1 class="animate-slidedown">{{ title }}</h1>
     <Button
       @button-click="$emit('button-click')"
-      color="forestgreen"
       :text="showAddTask ? 'Close' : 'Add Task'"
       :showAddTask="showAddTask"
     />
   </header>
 </template>
 
-<script>
+<script setup>
 import Button from './Button.vue';
 
-export default {
-  name: 'Header',
-  props: {
-    title: String,
-    showAddTask: Boolean,
-  },
-  components: {
-    Button,
-  },
-};
+defineProps({
+  title: { type: String },
+  showAddTask: { type: Boolean },
+});
 </script>

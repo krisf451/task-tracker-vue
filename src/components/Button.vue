@@ -1,8 +1,7 @@
 <template>
   <button
     class="btn"
-    :class="`${color === 'black' ? 'text-white' : ''}`"
-    :style="{ background: !showAddTask ? color : 'red' }"
+    :style="showAddTask ? { background: 'red' } : { background: 'green' }"
     @click="handleClick"
     type="button"
   >
@@ -14,7 +13,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue';
+import { defineEmits } from 'vue';
 
 const emit = defineEmits(['button-click']);
 // const bools = ref(true);
@@ -24,7 +23,6 @@ const handleClick = () => {
 };
 
 const props = defineProps({
-  color: { type: String },
   text: { type: String, default: 'Click Me' },
   showAddTask: { type: Boolean },
 });

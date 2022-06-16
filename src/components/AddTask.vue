@@ -19,12 +19,17 @@
           v-model="day"
         />
       </div>
-      <div class="mb-4">
+      <div class="mb-4 animate">
         <label for="reminder" class="mr-2">Set Reminder</label>
         <input type="checkbox" id="reminder" v-model="reminder" />
       </div>
 
-      <button class="btn mb-4 bg-black text-white" type="submit">Submit</button>
+      <button
+        class="btn mb-4 bg-gradient-to-r from-indigo-300 to-indigo-500 animate-slideleft"
+        type="submit"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </template>

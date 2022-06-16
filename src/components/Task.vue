@@ -6,7 +6,7 @@
     <h3 class="flex justify-between items-center">
       {{ task.text }}
       <i
-        @click="onDelete(task.id)"
+        @click="$emit('delete-task', task.id)"
         class="fa fa-times text-red-500 transition-transform duration-300 ease-in-out hover:scale-125"
       ></i>
     </h3>
@@ -14,16 +14,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Task",
-  props: {
-    task: Object,
-  },
-  methods: {
-    onDelete(id) {
-      this.$emit("delete-task", id);
-    },
-  },
-};
+<script setup>
+defineProps({
+  task: Object,
+});
 </script>
