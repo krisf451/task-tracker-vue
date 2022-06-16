@@ -1,6 +1,6 @@
 <template>
   <button
-    class="btn"
+    class="btn animate-slidedown"
     :style="showAddTask ? { background: 'red' } : { background: 'green' }"
     @click="handleClick"
     type="button"

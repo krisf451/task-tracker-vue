@@ -4,19 +4,19 @@
       "id": 71000,
       "text": "Eat 3 meals a day",
       "day": "Everyday",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 35378,
       "text": "Workout 3 times a week",
       "day": "Monday/Wednesday/Friday at 1:00PM PST",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 95383,
       "text": "Start New Job",
       "day": "June 21st, Tuesday 9:00AM PST",
-      "reminder": true
+      "reminder": false
     }
   ]
 }

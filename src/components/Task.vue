@@ -2,6 +2,7 @@
   <div
     @dblclick="$emit('toggle-reminder', task.id)"
     :class="[task.reminder ? 'border-l-8 border-green-500' : '', 'task']"
+    class="animate-slideleft"
   >
     <h3 class="flex justify-between items-center">
       {{ task.text }}

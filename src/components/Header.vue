@@ -2,6 +2,7 @@
   <header class="header">
     <h1 class="animate-slidedown">{{ title }}</h1>
     <Button
+      v-show="homePage"
       @button-click="$emit('button-click')"
       :text="showAddTask ? 'Close' : 'Add Task'"
       :showAddTask="showAddTask"
@@ -10,15 +11,20 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import Button from './Button.vue';
-
 defineProps({
   title: { type: String },
   showAddTask: { type: Boolean },
 });
+</script>
 
-const test = computed(() => {
-  console.log(this.$router.path);
-});
+<script>
+export default {
+  name: 'Header',
+  computed: {
+    homePage() {
+      return this.$route.path === '/';
+    },
+  },
+};
 </script>
