@@ -9,17 +9,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { defineEmits } from 'vue';
 import Task from './Task.vue';
 
-export default {
-  name: 'Tasks',
-  props: {
-    tasks: Array,
-  },
-  components: {
-    Task,
-  },
-  emits: ['delete-task', 'toggle-reminder'],
-};
+defineProps({
+  tasks: Array,
+});
+
+const emit = defineEmits(['toggle-reminder', 'delete-task']);
 </script>

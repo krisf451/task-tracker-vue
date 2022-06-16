@@ -10,10 +10,15 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import Button from './Button.vue';
 
 defineProps({
   title: { type: String },
   showAddTask: { type: Boolean },
+});
+
+const test = computed(() => {
+  console.log(this.$router.path);
 });
 </script>
